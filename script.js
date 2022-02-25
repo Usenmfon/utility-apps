@@ -22,7 +22,6 @@ search.addEventListener("input", (e) => {
 });
 
 const handleClick = (network) => {
-  console.log("clicked", network);
   switch (network) {
     case "MTN":
       changeDisplay(mtn_numbers);
