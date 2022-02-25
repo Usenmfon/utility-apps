@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>What NetWork</title>
+  </head>
+  <body>
+    <header>.</header>
+    <main>
+        <div class="search_bar">
+            <input type="text" placeholder="type here..." name="search"  aria-describedby="search" id="search">
+            <h3 class="network_name" aria-labelledby="network type">Network</h3>
+        </div>
+        <div class="network_buttons" aria-details="network buttons">
+            <div>
+                <button onclick="handleClick('MTN')">MTN</button>
+                <ul id="mtn_numbers">
+                    <li>0803</li>
+                    <li>0806</li>
+                    <li>0703</li>
+                    <li>0706</li>
+                    <li>0813</li>
+                    <li>0816</li>
+                    <li>0810</li>
+                    <li>0814</li>
+                    <li>0903</li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="handleClick('AIRTEL')">Airtel</button>
+                <ul id="airtel_numbers">
+                    <li>0802</li>
+                    <li>0808</li>
+                    <li>0708</li>
+                    <li>0812</li>
+                    <li>0701</li>
+                    <li>0902</li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="handleClick('GLO')">Glo</button>
+                <ul id="glo_numbers">
+                    <li>0805</li>
+                    <li>0807</li>
+                    <li>0705</li>
+                    <li>0815</li>
+                    <li>0811</li>
+                    <li>0905</li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="handleClick('NINEMOBILE')">9mobile</button>
+                <ul id="nine_mobile_numbers">
+                    <li>0809</li>
+                    <li>0818</li>
+                    <li>0817</li>
+                    <li>0909</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>Made with <span>&hearts;</span> by Usenmfon</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
