@@ -1,3 +1,7 @@
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/service-worker.js')
+}
+
 let SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 let SpeechGrammarList = window.SpeechGrammarList || webkitSpeechGrammarList
 let SpeechRecognitionEvent = window.SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
@@ -7,6 +11,7 @@ const microphone = document.querySelector('.fa-microphone')
 const network_name = document.querySelector('.network_name')
 const error_message = document.querySelector('.error')
 const search = document.getElementById("search");
+const installApp = document.getElementById("install");
 
 let synth = window.speechSynthesis;
 let voices = [];
@@ -26,6 +31,21 @@ recognition.interimResults = false;
 recognition.maxAlternatives = 1; 
 
 error_message.textContent = "Say the first 4 digits"
+
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  deferredPrompt = e;
+})
+
+installApp.addEventListener('click', async () => {
+  if(deferredPrompt !== null){
+    deferredPrompt.prompt();
+    const {outcome} = await deferredPrompt.userChoice;
+    if(outcome === 'accepted'){
+      deferredPrompt = null;
+    }
+  }
+})
 
 diagnostic.addEventListener('click', ()=> { 
   console.log('clicked')

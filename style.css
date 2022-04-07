@@ -65,6 +65,17 @@ border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.install_app{
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.install_app>button{
+  font-size: 2rem;
+  color: #4c4caf;
+}
+
 footer {
   position: fixed;
   bottom: 0;
